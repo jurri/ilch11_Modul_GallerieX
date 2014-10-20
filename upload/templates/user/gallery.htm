@@ -1,0 +1,65 @@
+<link href="include/includes/css/bxslider/jquery.bxslider.css" rel="stylesheet" />
+<link rel="stylesheet" href="include/includes/css/lightbox/lightbox.css" media="screen"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="include/includes/js/jquery.bxslider.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.bxslider').bxSlider({
+		controls: 1,
+		speed: 1400,
+		auto: 1,
+		pause: 5000,
+		pager: 1,
+		displaySlideQty: 1
+	});
+});
+</script>
+
+<br/>
+<ul class="bxslider">{bxslider}</ul>
+
+
+<script src="include/includes/js/lightbox-2.6.min.js"></script>
+
+<!--Start LightboxJS2>
+<link rel="stylesheet" href="include/includes/js/lightbox/css/lightbox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="include/includes/js/lightbox/js/prototype.js"></script>
+<script type="text/javascript" src="include/includes/js/lightbox/js/scriptaculous.js?load=effects"></script>
+<script type="text/javascript" src="include/includes/js/lightbox/js/lightbox.js"></script>
+<!--End LightboxJS2-->
+
+<table width="100%" class="border" border="0" cellspacing="1" cellpadding="1">
+<tr class="Chead">
+	<td colspan="{imgperline}" align="center"><b><font color="#DF7401">{uname}</font></b></td>
+</tr><tr>
+  {EXPLODE}
+     <td class="{class}" width="{width}%" valign="top" align="center">
+       <table class="border" border="0" cellspacing="1" cellpadding="0">
+         <tr>
+           <td>
+				<a target="_blank" class="example-image-link" data-lightbox="example-set" href="include/images/usergallery/img_{id}.{endung}"><img src="include/images/usergallery/img_thumb_{id}.{endung}" border="0" alt="{name}" title="{name}" /></a>
+		   </td>           
+         </tr>
+       </table>
+       {besch}
+     </td>
+   {EXPLODE}
+  </tr>
+</table>
+<center>{MPL}</center>
+{EXPLODE}
+
+<br /><br />
+<form action="index.php?user-usergallery-{uid}" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="gesendet" value="yes" />
+  <fieldset>
+    <legend><b>{_lang_pictureupload}</b></legend>
+	    <input type="file" size="40" name="file" style="margin-top:5px;" />
+      <input size="60" name="text" maxlength="255" style="margin-top:5px;" /><br />
+      <input type="submit" value="{_lang_formsub}" style="margin-top:5px;" />
+  </fieldset>
+</form>
+
+{EXPLODE}
+{x}
